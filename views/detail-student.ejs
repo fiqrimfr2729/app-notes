@@ -1,0 +1,23 @@
+<div class="container mt3">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>Detail Mahasiswa</h2>
+            <% if (!student) { %>
+                <div class="alert alert-danger fw-bold" role="alert">
+                    Data mahasiswa tidak ditemukan <br> <a href="/list-students" class="alert-link fw-normal">&laquo;Kembali</a>
+                </div>
+            <% } else { %>
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= student.name %> </h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= student.nim %> </h6>
+                        <p class="card-text">Alumni Polindra</p>
+                        <a type="button" href="/student/edit/<%= student.nim %> " class="btn btn-primary btn-sm mb-2">Update</a>
+                        <a type="button" href="/student/delete/<%= student.nim %> " class="btn btn-danger btn-sm mb-2">Delete</a> <br>
+                        <a href="/list-students" class="card-link">&laquo; Back</a>
+                    </div>
+                </div>
+            <% } %> 
+        </div>
+    </div>
+</div>
